@@ -142,9 +142,9 @@ export default function Home({
             <Avatar size={40} uri={s.photoUri} name={s.name} />
             <Text style={{ color: C.text, fontSize: 12, fontWeight: '700', letterSpacing: 1 }}>{s.name ? initialsOf(s.name) : 'Profile'}</Text>
           </Pressable>
-          <View style={{ flexDirection: 'row', gap: 6, alignItems: 'center', paddingBottom: 10 }} accessibilityLabel="Swipe right for History">
-            <View style={{ width: 6, height: 6, borderRadius: 3, backgroundColor: C.line }} />
+          <View style={{ flexDirection: 'row', gap: 6, alignItems: 'center', paddingBottom: 10 }} accessibilityLabel="Swipe left for History">
             <View style={{ width: 16, height: 6, borderRadius: 3, backgroundColor: C.red }} />
+            <View style={{ width: 6, height: 6, borderRadius: 3, backgroundColor: C.line }} />
           </View>
           <View style={{ minWidth: 48 }} />
         </View>

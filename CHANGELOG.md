@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.3
+
+- History now sits to the RIGHT of Home: swipe left on Home to open it, swipe right (or Back) to return.
+
 ## 1.1.2
 
 - Softer, cleaner red glow: the hero card glow no longer fades through a dark band on iPhone, and the coral numbers' glow is tighter so iOS does not cut it off in hard edges.

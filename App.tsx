@@ -99,21 +99,22 @@ export default function App() {
       break;
     case 'home':
     case 'history': {
-      // Home and History sit side by side: swipe right on Home to see History, swipe left to come back.
-      const toHome = () => pager.current?.scrollTo({ x: width, animated: true });
-      const toHistory = () => pager.current?.scrollTo({ x: 0, animated: true });
+      // Home and History sit side by side: History is on the RIGHT (Matthew, 22 Nov 2026).
+      // Swipe left on Home to see History, swipe right to come back.
+      const toHome = () => pager.current?.scrollTo({ x: 0, animated: true });
+      const toHistory = () => pager.current?.scrollTo({ x: width, animated: true });
       screen = (
         <ScrollView ref={pager} horizontal pagingEnabled bounces={false} showsHorizontalScrollIndicator={false}
-          contentOffset={{ x: route.name === 'history' ? 0 : width, y: 0 }} keyboardShouldPersistTaps="handled"
+          contentOffset={{ x: route.name === 'history' ? width : 0, y: 0 }} keyboardShouldPersistTaps="handled"
           style={{ flex: 1 }} onLayout={(e) => setPageH(e.nativeEvent.layout.height)}>
-          <View style={{ width, height: pageH || undefined }}>
-            <History onOpen={(id) => setRoute({ name: 'session', id })} onBack={toHome} />
-          </View>
           <View style={{ width, height: pageH || undefined }}>
             <Home onStart={startSport} onPool={() => setRoute({ name: 'pool' })} onHistory={toHistory}
               onSettings={() => setRoute({ name: 'settings' })} onProfile={() => setRoute({ name: 'profile' })} onEvents={() => setRoute({ name: 'events' })}
               onStats={() => setRoute({ name: 'stats' })} onBackToLive={() => setRoute({ name: 'live' })}
               onSync={uploadNow} syncNote={syncNote} />
+          </View>
+          <View style={{ width, height: pageH || undefined }}>
+            <History onOpen={(id) => setRoute({ name: 'session', id })} onBack={toHome} />
           </View>
         </ScrollView>
       );
