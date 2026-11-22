@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.4
+
+- Old name removed everywhere: the results repo is now mzansi-go-data (the app switches a saved iron-man-data setting over by itself), app slug mzansi-go.
+
 ## 1.1.3
 
 - History now sits to the RIGHT of Home: swipe left on Home to open it, swipe right (or Back) to return.

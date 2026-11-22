@@ -1,6 +1,6 @@
 # app
 
-Source of the Mzansi Go (was Iron Man until v1.0.4) GPS training app (Expo, React Native, TypeScript). This folder is the public GitHub repo `iron-man-tracker`; no personal data or tokens live here.
+Source of the Mzansi Go GPS training app (Expo, React Native, TypeScript). This folder is the public GitHub repo `mzansi-go`; no personal data or tokens live here.
 
 - `App.tsx` screen switcher, `index.ts` entry (loads the background GPS task first)
 - `src/lib` maths (geo.ts), GPX/CSV (export.ts), phone storage (db.ts), settings, GitHub sync

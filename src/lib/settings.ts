@@ -56,6 +56,8 @@ export const DEFAULTS: Settings = {
   photoUri: '',
 };
 
+// Storage keys keep their first-version names on purpose: renaming them would wipe the
+// settings and GitHub token already saved on the phone. Users never see them.
 const KEY = 'ironman.settings.v1';
 const TOKEN_KEY = 'ironman.github.token';
 
@@ -66,6 +68,11 @@ export async function loadSettings(): Promise<Settings> {
   try {
     const raw = await AsyncStorage.getItem(KEY);
     if (raw) cache = { ...DEFAULTS, ...JSON.parse(raw) };
+    // The results repo was renamed iron-man-data -> mzansi-go-data (22 Nov 2026).
+    if (/iron-man-data/i.test(cache.githubRepo || '')) {
+      cache = { ...cache, githubRepo: cache.githubRepo.replace(/iron-man-data/i, 'mzansi-go-data') };
+      await AsyncStorage.setItem(KEY, JSON.stringify(cache));
+    }
   } catch {
     cache = { ...DEFAULTS };
   }
