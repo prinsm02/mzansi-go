@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.2
+
+- Softer, cleaner red glow: the hero card glow no longer fades through a dark band on iPhone, and the coral numbers' glow is tighter so iOS does not cut it off in hard edges.
+- GitHub repo renamed to prinsm02/mzansi-go.
+
 ## 1.1.1
 
 - Logo letters now read MGo (M black, G and o red), same race bib.

@@ -37,7 +37,7 @@ export const SPORT_COLOR = { run: '#ff6b6b', bike: '#f0f0f0', swim: '#5994f0' } 
 export const initialsOf = (name: string) =>
   (name || '').trim().split(/\s+/).filter(Boolean).map((w) => w[0]).join('').slice(0, 2).toUpperCase() || 'ME';
 
-const glow = { textShadowColor: 'rgba(217,53,53,0.35)', textShadowOffset: { width: 0, height: 0 }, textShadowRadius: 18 } as const;
+const glow = { textShadowColor: 'rgba(217,53,53,0.55)', textShadowOffset: { width: 0, height: 0 }, textShadowRadius: 8 } as const;
 
 export const T = StyleSheet.create({
   screen: { flex: 1, backgroundColor: C.bg },
@@ -56,8 +56,8 @@ export function Hero({ children, style }: { children: React.ReactNode; style?: V
   return (
     <View style={[{ borderRadius: 14, borderWidth: 1, borderColor: C.line, backgroundColor: '#111', overflow: 'hidden' }, style]}>
       <LinearGradient
-        colors={['rgba(217,53,53,0.28)', 'rgba(217,53,53,0.06)', 'transparent']}
-        locations={[0, 0.45, 1]}
+        colors={['rgba(217,53,53,0.26)', 'rgba(217,53,53,0.09)', 'rgba(217,53,53,0)']}
+        locations={[0, 0.4, 0.85]}
         start={{ x: 1, y: 0 }}
         end={{ x: 0.2, y: 1 }}
         style={StyleSheet.absoluteFill}
